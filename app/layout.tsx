@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
+import { SettingsProvider } from '@/hooks/use-settings'
 import './globals.css'
-import { SettingsProvider } from '@/hooks/use-settings' // Path projenize göre (örn: '@/context/settings-context' veya '@/hooks/use-settings')
 
 export const metadata: Metadata = {
   title: 'Ezan Vakitleri & Kıble Pusulası',
@@ -23,6 +24,7 @@ export default function RootLayout({
         <SettingsProvider>
           {children}
         </SettingsProvider>
+        <Analytics />
       </body>
     </html>
   )
